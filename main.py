@@ -39,6 +39,9 @@ def main(argv) -> int:
     if len(WORD.split()) != 1:
         print("entry must be exactly one word", file=sys.stderr)
         return 1
+    if not WORD.isalpha():
+        print("entry must be letters only (no digits or punctuation)", file=sys.stderr)
+        return 1
 
     parent = os.path.dirname(output_path)
     if parent:

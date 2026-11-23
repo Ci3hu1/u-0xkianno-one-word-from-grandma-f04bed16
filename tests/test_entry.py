@@ -35,6 +35,7 @@ class TestOneWordEntry(unittest.TestCase):
         self.assertTrue(1 <= len(EXPECTED) <= 30)
         self.assertTrue(EXPECTED.strip())
         self.assertEqual(len(EXPECTED.split()), 1)
+        self.assertTrue(EXPECTED.isalpha())
 
     def test_program_writes_exact_word(self):
         with tempfile.TemporaryDirectory() as tmp:
